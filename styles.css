@@ -73,11 +73,76 @@ body {
   line-height: 1.6;
   overflow-x: hidden;
   position: relative;
+  /* Disable text selection on decorative elements */
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  /* Disable image dragging */
+  -webkit-user-drag: none;
+  -khtml-user-drag: none;
+  -moz-user-drag: none;
+  -o-user-drag: none;
+}
+
+/* Allow selection on important content */
+.footer-link,
+.form-input,
+.form-textarea,
+.pricing-price,
+.contact-form,
+input,
+textarea,
+select {
+  -webkit-user-select: text !important;
+  -moz-user-select: text !important;
+  -ms-user-select: text !important;
+  user-select: text !important;
 }
 
 ::selection {
   background: var(--color-primary);
   color: var(--color-bg);
+}
+
+/* Prevent context menu highlight */
+* {
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* Smooth font rendering */
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+/* Invisible watermark for content tracking */
+.watermark {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  font-size: 8px;
+  color: rgba(0, 212, 255, 0.02);
+  font-family: var(--font-mono);
+  pointer-events: none;
+  z-index: 9999;
+  user-select: none;
+  letter-spacing: 50px;
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+  padding: 10px;
+}
+
+.watermark::before {
+  content: 'SOFTWARE EMPIRE © 2025';
+  opacity: 0.01;
+}
+
+/* Prevent zoom gestures on touch devices */
+html {
+  touch-action: pan-x pan-y;
+  -ms-touch-action: pan-x pan-y;
 }
 
 /* ================================

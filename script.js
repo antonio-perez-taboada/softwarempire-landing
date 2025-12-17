@@ -1,4 +1,154 @@
 // ================================
+// CONTENT PROTECTION
+// ================================
+(function() {
+  // Show custom notification
+  const showProtectionNotification = (message) => {
+    // Check if notification already exists
+    let notification = document.querySelector('.protection-notification');
+
+    if (!notification) {
+      notification = document.createElement('div');
+      notification.className = 'protection-notification';
+      notification.style.cssText = `
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        background: linear-gradient(135deg, #00d4ff, #8b5cf6);
+        color: #0a0a12;
+        padding: 16px 24px;
+        border-radius: 8px;
+        font-family: 'Rajdhani', sans-serif;
+        font-weight: 600;
+        font-size: 14px;
+        z-index: 10000;
+        box-shadow: 0 4px 24px rgba(0, 212, 255, 0.5);
+        animation: slideInRight 0.3s ease-out;
+        pointer-events: none;
+      `;
+      document.body.appendChild(notification);
+
+      // Add animation
+      const style = document.createElement('style');
+      style.textContent = `
+        @keyframes slideInRight {
+          from {
+            transform: translateX(400px);
+            opacity: 0;
+          }
+          to {
+            transform: translateX(0);
+            opacity: 1;
+          }
+        }
+        @keyframes slideOutRight {
+          from {
+            transform: translateX(0);
+            opacity: 1;
+          }
+          to {
+            transform: translateX(400px);
+            opacity: 0;
+          }
+        }
+      `;
+      document.head.appendChild(style);
+    }
+
+    notification.textContent = message;
+    notification.style.animation = 'slideInRight 0.3s ease-out';
+
+    // Remove after 2 seconds
+    setTimeout(() => {
+      notification.style.animation = 'slideOutRight 0.3s ease-out';
+      setTimeout(() => notification.remove(), 300);
+    }, 2000);
+  };
+
+  // Disable right-click context menu
+  document.addEventListener('contextmenu', (e) => {
+    e.preventDefault();
+    showProtectionNotification('🔒 Contenido protegido');
+    return false;
+  });
+
+  // Disable specific keyboard shortcuts
+  document.addEventListener('keydown', (e) => {
+    // Disable F12, Ctrl+Shift+I, Ctrl+Shift+J, Ctrl+U (DevTools shortcuts)
+    if (
+      e.key === 'F12' ||
+      (e.ctrlKey && e.shiftKey && (e.key === 'I' || e.key === 'J' || e.key === 'C')) ||
+      (e.ctrlKey && e.key === 'U')
+    ) {
+      e.preventDefault();
+      return false;
+    }
+
+    // Disable Ctrl+S (Save page)
+    if (e.ctrlKey && e.key === 's') {
+      e.preventDefault();
+      return false;
+    }
+
+    // Disable Ctrl+P (Print) - optional, comment out if you want to allow printing
+    if (e.ctrlKey && e.key === 'p') {
+      e.preventDefault();
+      return false;
+    }
+  });
+
+  // Disable text selection via keyboard (Ctrl+A)
+  document.addEventListener('keydown', (e) => {
+    // Allow Ctrl+A only in input fields, textareas, and editable elements
+    const allowedElements = ['INPUT', 'TEXTAREA'];
+    const isEditable = e.target.isContentEditable;
+
+    if (e.ctrlKey && e.key === 'a' && !allowedElements.includes(e.target.tagName) && !isEditable) {
+      e.preventDefault();
+      return false;
+    }
+  });
+
+  // Prevent dragging images
+  document.addEventListener('dragstart', (e) => {
+    if (e.target.tagName === 'IMG') {
+      e.preventDefault();
+      return false;
+    }
+  });
+
+  // Detect DevTools opening (basic detection)
+  const detectDevTools = () => {
+    const threshold = 160;
+    const widthThreshold = window.outerWidth - window.innerWidth > threshold;
+    const heightThreshold = window.outerHeight - window.innerHeight > threshold;
+
+    if (widthThreshold || heightThreshold) {
+      // DevTools might be open - you could add custom behavior here
+      // For now, we just detect it silently
+      console.clear();
+    }
+  };
+
+  // Check periodically
+  setInterval(detectDevTools, 1000);
+
+  // Disable copy event on specific elements
+  document.addEventListener('copy', (e) => {
+    const allowedElements = ['INPUT', 'TEXTAREA'];
+    const allowedClasses = ['footer-link', 'pricing-price', 'form-input', 'form-textarea'];
+
+    const isAllowedElement = allowedElements.includes(e.target.tagName);
+    const isAllowedClass = allowedClasses.some(className => e.target.classList.contains(className));
+
+    if (!isAllowedElement && !isAllowedClass) {
+      e.preventDefault();
+      return false;
+    }
+  });
+})();
+
+// ================================
 // DARK READER BLOCKER
 // ================================
 (function() {
