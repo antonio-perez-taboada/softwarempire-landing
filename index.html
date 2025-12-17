@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Software Empire - Construimos el Futuro</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@300;400;600;700&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Animated Background Grid -->
+    <div class="grid-background"></div>
+
+    <!-- Navigation -->
+    <nav class="nav">
+        <div class="nav-container">
+            <div class="logo">
+                <span class="logo-text">SOFTWARE</span>
+                <span class="logo-accent">EMPIRE</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#servicios" class="nav-link">Servicios</a></li>
+                <li><a href="#portfolio" class="nav-link">Portfolio</a></li>
+                <li><a href="#pricing" class="nav-link">Precios</a></li>
+                <li><a href="#contacto" class="nav-link nav-cta">Empezar Proyecto</a></li>
+            </ul>
+            <button class="mobile-menu-toggle" aria-label="Toggle menu">
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu Overlay -->
+    <div class="mobile-menu-overlay">
+        <nav class="mobile-menu">
+            <a href="#servicios" class="nav-link">Servicios</a>
+            <a href="#portfolio" class="nav-link">Portfolio</a>
+            <a href="#pricing" class="nav-link">Precios</a>
+            <a href="#contacto" class="nav-link nav-cta">Empezar Proyecto</a>
+        </nav>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <div class="hero-badge">
+                <span class="badge-dot"></span>
+                Disponible para proyectos 2025
+            </div>
+            <h1 class="hero-title">
+                <span class="title-line">Construimos</span>
+                <span class="title-line title-gradient">Software</span>
+                <span class="title-line">que Domina</span>
+            </h1>
+            <p class="hero-subtitle">
+                Desarrollo a la vanguardia. Precios honestos. <br>
+                <span class="subtitle-highlight">Tu imperio digital empieza aquí.</span>
+            </p>
+            <div class="hero-cta">
+                <a href="#contacto" class="btn btn-primary">
+                    <span class="btn-text">Iniciar Proyecto</span>
+                    <span class="btn-arrow">→</span>
+                </a>
+                <a href="#portfolio" class="btn btn-secondary">
+                    <span class="btn-text">Ver Trabajos</span>
+                </a>
+            </div>
+            <div class="hero-stats">
+                <div class="stat">
+                    <div class="stat-number" data-target="100">0</div>
+                    <div class="stat-label">% Satisfacción</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-number" data-target="48">0</div>
+                    <div class="stat-label">Horas Promedio</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-number" data-target="30">0</div>
+                    <div class="stat-label">Días Entrega</div>
+                </div>
+            </div>
+        </div>
+        <div class="hero-visual">
+            <div class="cube-container">
+                <div class="cube">
+                    <div class="cube-face cube-front"></div>
+                    <div class="cube-face cube-back"></div>
+                    <div class="cube-face cube-right"></div>
+                    <div class="cube-face cube-left"></div>
+                    <div class="cube-face cube-top"></div>
+                    <div class="cube-face cube-bottom"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Servicios Section -->
+    <section id="servicios" class="services">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">// STACK COMPLETO</span>
+                <h2 class="section-title">Arsenal Tecnológico</h2>
+                <p class="section-subtitle">Desde el concepto hasta el deploy. Todo in-house.</p>
+            </div>
+            <div class="services-grid">
+                <div class="service-card" data-service="1">
+                    <div class="card-icon">⚡</div>
+                    <h3 class="card-title">Web Apps</h3>
+                    <p class="card-description">React, Next.js, Vue. Experiencias rápidas como el rayo.</p>
+                    <ul class="card-features">
+                        <li>SSR & Static Generation</li>
+                        <li>PWA & Offline-first</li>
+                        <li>Real-time updates</li>
+                    </ul>
+                    <div class="card-hover-effect"></div>
+                </div>
+                <div class="service-card" data-service="2">
+                    <div class="card-icon">🚀</div>
+                    <h3 class="card-title">APIs & Backend</h3>
+                    <p class="card-description">Node.js, Python, Go. Arquitecturas que escalan.</p>
+                    <ul class="card-features">
+                        <li>Microservicios</li>
+                        <li>GraphQL & REST</li>
+                        <li>CI/CD Automatizado</li>
+                    </ul>
+                    <div class="card-hover-effect"></div>
+                </div>
+                <div class="service-card" data-service="3">
+                    <div class="card-icon">📱</div>
+                    <h3 class="card-title">Mobile Apps</h3>
+                    <p class="card-description">React Native, Flutter. Una base, todas las plataformas.</p>
+                    <ul class="card-features">
+                        <li>iOS & Android nativo</li>
+                        <li>Push notifications</li>
+                        <li>Offline sync</li>
+                    </ul>
+                    <div class="card-hover-effect"></div>
+                </div>
+                <div class="service-card" data-service="4">
+                    <div class="card-icon">🎨</div>
+                    <h3 class="card-title">UI/UX Design</h3>
+                    <p class="card-description">Figma, Framer. Diseños que convierten.</p>
+                    <ul class="card-features">
+                        <li>Design Systems</li>
+                        <li>Prototipos interactivos</li>
+                        <li>A/B Testing</li>
+                    </ul>
+                    <div class="card-hover-effect"></div>
+                </div>
+                <div class="service-card" data-service="5">
+                    <div class="card-icon">🤖</div>
+                    <h3 class="card-title">AI Integration</h3>
+                    <p class="card-description">OpenAI, Claude, custom models. Inteligencia real.</p>
+                    <ul class="card-features">
+                        <li>Chatbots inteligentes</li>
+                        <li>Automatización ML</li>
+                        <li>Data Analytics</li>
+                    </ul>
+                    <div class="card-hover-effect"></div>
+                </div>
+                <div class="service-card" data-service="6">
+                    <div class="card-icon">☁️</div>
+                    <h3 class="card-title">Cloud & DevOps</h3>
+                    <p class="card-description">AWS, Vercel, Docker. Infraestructura de hierro.</p>
+                    <ul class="card-features">
+                        <li>Auto-scaling</li>
+                        <li>Monitoring 24/7</li>
+                        <li>99.9% uptime</li>
+                    </ul>
+                    <div class="card-hover-effect"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section id="portfolio" class="portfolio">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">// CASE STUDIES</span>
+                <h2 class="section-title">Proyectos que Impactan</h2>
+            </div>
+            <div class="portfolio-grid">
+                <div class="portfolio-item" data-index="1">
+                    <div class="portfolio-image">
+                        <div class="image-placeholder project-1"></div>
+                    </div>
+                    <div class="portfolio-info">
+                        <h3 class="portfolio-title">E-Commerce Premium</h3>
+                        <p class="portfolio-description">Plataforma completa con 10k+ usuarios activos</p>
+                        <div class="portfolio-tags">
+                            <span class="tag">Next.js</span>
+                            <span class="tag">Stripe</span>
+                            <span class="tag">PostgreSQL</span>
+                        </div>
+                    </div>
+                    <div class="portfolio-overlay">
+                        <span class="overlay-text">Ver Caso →</span>
+                    </div>
+                </div>
+                <div class="portfolio-item" data-index="2">
+                    <div class="portfolio-image">
+                        <div class="image-placeholder project-2"></div>
+                    </div>
+                    <div class="portfolio-info">
+                        <h3 class="portfolio-title">SaaS Analytics</h3>
+                        <p class="portfolio-description">Dashboard real-time para 500+ empresas</p>
+                        <div class="portfolio-tags">
+                            <span class="tag">React</span>
+                            <span class="tag">WebSockets</span>
+                            <span class="tag">D3.js</span>
+                        </div>
+                    </div>
+                    <div class="portfolio-overlay">
+                        <span class="overlay-text">Ver Caso →</span>
+                    </div>
+                </div>
+                <div class="portfolio-item" data-index="3">
+                    <div class="portfolio-image">
+                        <div class="image-placeholder project-3"></div>
+                    </div>
+                    <div class="portfolio-info">
+                        <h3 class="portfolio-title">App de Delivery</h3>
+                        <p class="portfolio-description">Sistema completo de logística en tiempo real</p>
+                        <div class="portfolio-tags">
+                            <span class="tag">React Native</span>
+                            <span class="tag">Google Maps</span>
+                            <span class="tag">Firebase</span>
+                        </div>
+                    </div>
+                    <div class="portfolio-overlay">
+                        <span class="overlay-text">Ver Caso →</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section id="pricing" class="pricing">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">// TRANSPARENCIA TOTAL</span>
+                <h2 class="section-title">Precios Honestos</h2>
+                <p class="section-subtitle">Sin letra pequeña. Sin sorpresas. Solo valor real.</p>
+            </div>
+            <div class="pricing-grid">
+                <div class="pricing-card">
+                    <div class="pricing-header">
+                        <h3 class="pricing-title">Starter</h3>
+                        <div class="pricing-price">
+                            <span class="price-currency">€</span>
+                            <span class="price-amount">2.500</span>
+                            <span class="price-period">/proyecto</span>
+                        </div>
+                    </div>
+                    <ul class="pricing-features">
+                        <li>Landing Page o Web App básica</li>
+                        <li>Diseño UI/UX incluido</li>
+                        <li>Responsive 100%</li>
+                        <li>SEO Básico</li>
+                        <li>Hosting primer año gratis</li>
+                        <li>2 revisiones incluidas</li>
+                    </ul>
+                    <a href="#contacto" class="btn btn-outline">Empezar</a>
+                </div>
+                <div class="pricing-card featured">
+                    <div class="featured-badge">MÁS POPULAR</div>
+                    <div class="pricing-header">
+                        <h3 class="pricing-title">Professional</h3>
+                        <div class="pricing-price">
+                            <span class="price-currency">€</span>
+                            <span class="price-amount">7.500</span>
+                            <span class="price-period">/proyecto</span>
+                        </div>
+                    </div>
+                    <ul class="pricing-features">
+                        <li>Web App completa + Backend</li>
+                        <li>Diseño UI/UX premium</li>
+                        <li>API REST o GraphQL</li>
+                        <li>Base de datos optimizada</li>
+                        <li>Autenticación & Seguridad</li>
+                        <li>Panel de administración</li>
+                        <li>Integraciones (Stripe, etc)</li>
+                        <li>Soporte 3 meses</li>
+                    </ul>
+                    <a href="#contacto" class="btn btn-primary">Empezar</a>
+                </div>
+                <div class="pricing-card">
+                    <div class="pricing-header">
+                        <h3 class="pricing-title">Enterprise</h3>
+                        <div class="pricing-price">
+                            <span class="price-currency">€</span>
+                            <span class="price-amount">15k+</span>
+                            <span class="price-period">/proyecto</span>
+                        </div>
+                    </div>
+                    <ul class="pricing-features">
+                        <li>Plataforma completa a medida</li>
+                        <li>Mobile App (iOS + Android)</li>
+                        <li>Arquitectura escalable</li>
+                        <li>AI/ML Integration</li>
+                        <li>DevOps & CI/CD</li>
+                        <li>Testing automatizado</li>
+                        <li>Soporte prioritario 12 meses</li>
+                        <li>Consultoría estratégica</li>
+                    </ul>
+                    <a href="#contacto" class="btn btn-outline">Contactar</a>
+                </div>
+            </div>
+            <div class="pricing-note">
+                💡 <strong>Pago flexible:</strong> 50% inicio, 50% entrega. Ajustamos presupuestos según tu proyecto.
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section id="contacto" class="cta">
+        <div class="cta-content">
+            <h2 class="cta-title">¿Listo para Dominar tu Nicho?</h2>
+            <p class="cta-subtitle">Cuéntanos tu idea. Te respondemos en menos de 24h.</p>
+            <form class="contact-form">
+                <div class="form-row">
+                    <input type="text" placeholder="Tu nombre" class="form-input" required>
+                    <input type="email" placeholder="Email" class="form-input" required>
+                </div>
+                <div class="form-row">
+                    <input type="text" placeholder="Empresa (opcional)" class="form-input">
+                    <select class="form-input">
+                        <option>Presupuesto estimado</option>
+                        <option>< 5k €</option>
+                        <option>5k - 10k €</option>
+                        <option>10k - 20k €</option>
+                        <option>> 20k €</option>
+                    </select>
+                </div>
+                <textarea placeholder="Cuéntanos tu proyecto..." class="form-textarea" rows="5" required></textarea>
+                <button type="submit" class="btn btn-primary btn-large">
+                    <span class="btn-text">Enviar Proyecto</span>
+                    <span class="btn-arrow">→</span>
+                </button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-left">
+                <div class="logo">
+                    <span class="logo-text">SOFTWARE</span>
+                    <span class="logo-accent">EMPIRE</span>
+                </div>
+                <p class="footer-tagline">Construimos imperios digitales desde 2025</p>
+            </div>
+            <div class="footer-links">
+                <a href="mailto:hola@softwarempire.com" class="footer-link">hola@softwarempire.com</a>
+                <a href="#" class="footer-link">GitHub</a>
+                <a href="#" class="footer-link">LinkedIn</a>
+                <a href="#" class="footer-link">Twitter</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2025 Software Empire. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
