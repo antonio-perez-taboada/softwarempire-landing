@@ -2,6 +2,8 @@
    TECH EMPIRE THEME - BLUE/PURPLE EDITION
    ================================ */
 :root {
+  color-scheme: dark;
+
   /* Colors - Electric Blue meets Deep Purple */
   --color-bg: #0a0a12;
   --color-surface: #0f0f1a;

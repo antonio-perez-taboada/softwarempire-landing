@@ -1,4 +1,59 @@
 // ================================
+// DARK READER BLOCKER
+// ================================
+(function() {
+  // Detect and remove Dark Reader elements
+  const removeDarkReaderElements = () => {
+    // Remove Dark Reader injected styles
+    const darkReaderStyles = document.querySelectorAll('style[class*="darkreader"], style[id*="dark-reader"]');
+    darkReaderStyles.forEach(style => style.remove());
+
+    // Remove Dark Reader meta tags injected dynamically
+    const darkReaderMeta = document.querySelectorAll('meta[name*="darkreader"]');
+    darkReaderMeta.forEach(meta => {
+      if (meta.getAttribute('name') !== 'darkreader' || meta.getAttribute('content') !== 'NO-DARKREADER-PLUGIN') {
+        meta.remove();
+      }
+    });
+
+    // Remove data attributes added by Dark Reader
+    document.querySelectorAll('[data-darkreader-inline-bgcolor], [data-darkreader-inline-color]').forEach(el => {
+      el.removeAttribute('data-darkreader-inline-bgcolor');
+      el.removeAttribute('data-darkreader-inline-color');
+      el.removeAttribute('data-darkreader-inline-border');
+      el.removeAttribute('data-darkreader-inline-boxshadow');
+    });
+  };
+
+  // Run immediately
+  removeDarkReaderElements();
+
+  // Watch for DOM changes and remove Dark Reader injections
+  const observer = new MutationObserver((mutations) => {
+    mutations.forEach((mutation) => {
+      mutation.addedNodes.forEach((node) => {
+        if (node.nodeType === 1) { // Element node
+          if (node.tagName === 'STYLE' &&
+              (node.className?.includes('darkreader') || node.id?.includes('dark-reader'))) {
+            node.remove();
+          }
+        }
+      });
+    });
+  });
+
+  observer.observe(document.documentElement, {
+    childList: true,
+    subtree: true,
+    attributes: true,
+    attributeFilter: ['data-darkreader-inline-bgcolor', 'data-darkreader-inline-color']
+  });
+
+  // Prevent Dark Reader from running by checking for its presence
+  setInterval(removeDarkReaderElements, 500);
+})();
+
+// ================================
 // MOBILE MENU TOGGLE
 // ================================
 const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
